@@ -20,7 +20,6 @@ function finish_noswitch(chosen, doors)
 end
 
 function finish_switch(chosen, revealed_doors, doors)
-	print("switch")
 	-- array looks like this: {false, true, false}
 	-- we need to switch from one false to the other
 	for i, bool in ipairs(revealed_doors) do
@@ -31,23 +30,28 @@ function finish_switch(chosen, revealed_doors, doors)
 	return doors[chosen]
 end
 
-function play()
+function play(will_switch)
 	local chosen = 1
 	local doors = generate_doors()
 	local revealed_doors = {false, false, false}
 	reveal_goat(doors, chosen, revealed_doors)
-	for i, bool in ipairs(doors) do
-		if revealed_doors[i] then
-			print(bool)
-		else
-			print("x")
-		end
-	end
-	if math.random(2) == 1 then
-		return finish_noswitch(chosen, doors)
-	else
+	if will_switch then
 		return finish_switch(chosen, revealed_doors, doors)
+	else
+		return finish_noswitch(chosen, doors)
 	end
 end
 
-print("Did a play win: " .. tostring(play()))
+tests = 100000
+wins_switching = 0
+wins_not_switching = 0
+for i = 0,tests,1 do
+	wins_switching = wins_switching + (play(true) and 1 or 0)
+end
+for i = 0,tests,1 do
+	wins_not_switching = wins_not_switching + (play(false) and 1 or 0)	
+end
+probability_win_switching = wins_switching / tests
+probability_win_not_switching = wins_not_switching / tests
+print("Probability of winning with switching = " .. tostring(probability_win_switching * 100) .. "%")
+print("Probability of winning without switching = " .. tostring(probability_win_not_switching * 100) .. "%")
