@@ -1,0 +1,19 @@
+Number of tests performed = 10
+0s 4332KB
+Probability of winning with switching = 70.0%
+Probability of winning without switching = 40.0%
+
+Number of tests performed = 1000
+0s 4176KB
+Probability of winning with switching = 65.5%
+Probability of winning without switching = 37.0%
+
+Number of tests performed = 100000
+0.26s 4372KB
+Probability of winning with switching = 66.519%
+Probability of winning without switching = 33.362%
+
+Number of tests performed = 1000000
+1.95s 4372KB
+Probability of winning with switching = 66.6721%
+Probability of winning without switching = 33.3581%

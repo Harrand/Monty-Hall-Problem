@@ -42,7 +42,7 @@ function play(will_switch)
 	end
 end
 
-tests = 100000
+tests = 1000000
 wins_switching = 0
 wins_not_switching = 0
 for i = 0,tests,1 do
@@ -53,5 +53,6 @@ for i = 0,tests,1 do
 end
 probability_win_switching = wins_switching / tests
 probability_win_not_switching = wins_not_switching / tests
+print("Number of tests performed = " .. tostring(tests))
 print("Probability of winning with switching = " .. tostring(probability_win_switching * 100) .. "%")
 print("Probability of winning without switching = " .. tostring(probability_win_not_switching * 100) .. "%")

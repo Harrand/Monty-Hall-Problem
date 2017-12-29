@@ -9,3 +9,5 @@ The problem is a paradox of the veridical type, because the correct choice (that
 An intuitive explanation is that, if the contestant initially picks a goat (2 of 3 doors), the contestant will win the car by switching because the other goat can no longer be picked, whereas if the contestant initially picks the car (1 of 3 doors), the contestant will not win the car by switching (Carlton 2005, concluding remarks). The fact that the host subsequently reveals a goat in one of the unchosen doors changes nothing about the initial probability.
 
 * [Wikipedia Source](https://en.wikipedia.org/wiki/Monty_Hall_problem) - source regarding the paradox.
+
+See results.txt for the results of simulating the Monty Hall Problem with varying number of tests (on a logarithmic scale)
