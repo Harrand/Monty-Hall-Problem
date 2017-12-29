@@ -45,10 +45,10 @@ end
 tests = 1000000
 wins_switching = 0
 wins_not_switching = 0
-for i = 0,tests,1 do
+for i = 1,tests,1 do
 	wins_switching = wins_switching + (play(true) and 1 or 0)
 end
-for i = 0,tests,1 do
+for i = 1,tests,1 do
 	wins_not_switching = wins_not_switching + (play(false) and 1 or 0)	
 end
 probability_win_switching = wins_switching / tests
